@@ -1,5 +1,6 @@
 package com.example.songs.song;
 
+import com.example.songs.artist.Artist;
 import jakarta.persistence.*;
 
 @Entity(name = "Song")
@@ -13,20 +14,29 @@ public class Song {
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    private MusicKey originalMusicKey;
+    private MusicKey musicKey;
 
-    @Column(nullable = false)
-    private String name;
+    @Column(name = "song_name")
+    private String songName;
 
-    @Column(nullable = false)
-    private String artist;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "artist_id", foreignKey = @ForeignKey(name = "artist_fk"))
+    private Artist artist;
 
-    @Column(nullable = false)
+    @Column(name = "bpm")
     private Integer bpm;
 
+    @Column(name = "lyrics")
     private String lyrics;
 
-    public Song() {
+    public Song(MusicKey musicKey, String songName, Artist artist, Integer bpm) {
+        this.musicKey = musicKey;
+        this.songName = songName;
+        this.artist = artist;
+        this.bpm = bpm;
     }
 
+    public Song() {
+
+    }
 }

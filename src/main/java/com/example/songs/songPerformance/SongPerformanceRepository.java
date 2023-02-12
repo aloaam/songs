@@ -1,4 +1,4 @@
-package com.example.songs.userSong;
+package com.example.songs.songPerformance;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

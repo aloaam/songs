@@ -1,5 +1,9 @@
 package com.example.songs;
 
+import com.example.songs.artist.Artist;
+import com.example.songs.song.MusicKey;
+import com.example.songs.song.Song;
+import com.example.songs.song.SongRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,11 +17,18 @@ public class SongsApplication {
     }
 
     @Bean
-    public CommandLineRunner commandLineRunner() {
+    public CommandLineRunner commandLineRunner(SongRepository songRepository) {
         return args -> {
             System.out.println("Hello from CLR");
 
-
+            Artist ladyGaga = new Artist("lady_gaga");
+            System.out.println(ladyGaga);
+//            songRepository.saveAll(
+//                    List.of(
+//                            new Song(MusicKey.AM, "bad_romance", ladyGaga, 120)
+//                    )
+//            );
+            songRepository.save(new Song(MusicKey.AM, "bad_romance", ladyGaga, 120));
         };
     }
 
