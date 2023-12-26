@@ -1,13 +1,14 @@
 package com.example.songs;
 
 import com.example.songs.artist.Artist;
-import com.example.songs.song.MusicKey;
 import com.example.songs.song.Song;
 import com.example.songs.song.SongRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+
+import java.util.List;
 
 @SpringBootApplication
 public class SongsApplication {
@@ -16,20 +17,20 @@ public class SongsApplication {
         SpringApplication.run(SongsApplication.class, args);
     }
 
+
     @Bean
-    public CommandLineRunner commandLineRunner(SongRepository songRepository) {
+    public CommandLineRunner startup(SongRepository songRepository) {
         return args -> {
-            System.out.println("Hello from CLR");
 
-            Artist ladyGaga = new Artist("lady_gaga");
-            System.out.println(ladyGaga);
-//            songRepository.saveAll(
-//                    List.of(
-//                            new Song(MusicKey.AM, "bad_romance", ladyGaga, 120)
-//                    )
-//            );
-            songRepository.save(new Song(MusicKey.AM, "bad_romance", ladyGaga, 120));
+            System.out.println("Hello!");
+            List<Song> allSongs = songRepository.findAll();
+            Song song = allSongs.get(0);
+
+            Artist artist = song.getArtist();
+
+            System.out.println(artist);
+            System.out.println(song);
         };
-    }
 
+    }
 }

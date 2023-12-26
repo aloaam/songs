@@ -2,7 +2,11 @@ package com.example.songs.song;
 
 import com.example.songs.artist.Artist;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.ToString;
 
+@Getter
+@ToString
 @Entity(name = "Song")
 @Table(name = "song")
 public class Song {

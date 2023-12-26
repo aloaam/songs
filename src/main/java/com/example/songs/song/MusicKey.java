@@ -2,28 +2,30 @@ package com.example.songs.song;
 
 public enum MusicKey {
 
-    A("a_major"),
-    B("b_major"),
-    C("c_major"),
-    D("d_major"),
-    E("e_major"),
-    F("f_major"),
-    G("g_major"),
-    AM("a_minor"),
-    BM("b_minor"),
-    CM("c_minor"),
-    DM("d_minor"),
-    EM("e_minor"),
-    FM("f_minor"),
-    GM("g_minor");
+    A_FLAT_MAYOR,
+    A_MAYOR,
+    B_FLAT_MAYOR,
+    B_MAYOR,
+    C_MAYOR,
+    D_FLAT_MAYOR,
+    D_MAYOR,
+    E_FLAT_MAYOR,
+    E_MAYOR,
+    F_MAYOR,
+    G_FLAT_MAYOR,
+    G_MAYOR,
 
-    private final String key;
+    A_FLAT_MINOR,
+    A_MINOR,
+    B_FLAT_MINOR,
+    B_MINOR,
+    C_MINOR,
+    D_FLAT_MINOR,
+    D_MINOR,
+    E_FLAT_MINOR,
+    E_MINOR,
+    F_MINOR,
+    G_FLAT_MINOR,
+    G_MINOR,
 
-    MusicKey(String key) {
-        this.key = key;
-    }
-
-    public String getKey() {
-        return key;
-    }
 }
