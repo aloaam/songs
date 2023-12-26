@@ -3,6 +3,7 @@ package com.example.songs.song;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class SongSqlDao implements SongDao {
@@ -13,8 +14,8 @@ public class SongSqlDao implements SongDao {
         this.repository = repository;
     }
 
-    public List<Song> getAllSongs() {
-        return repository.findAll();
+    public Optional<List<Song>> getAllSongs() {
+        return Optional.of(repository.findAll());
     }
 
 }

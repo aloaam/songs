@@ -3,6 +3,7 @@ package com.example.songs.song;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SongService {
@@ -14,7 +15,7 @@ public class SongService {
         this.storage = storage;
     }
 
-    public List<Song> getAllSongs() {
+    public Optional<List<Song>> getAllSongs() {
         return storage.getAllSongs();
     }
 

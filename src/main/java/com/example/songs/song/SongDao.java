@@ -1,10 +1,11 @@
 package com.example.songs.song;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface SongDao {
 
-    List<Song> getAllSongs();
+    Optional<List<Song>> getAllSongs();
 
 
 }
