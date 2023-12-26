@@ -23,4 +23,14 @@ public class ArtistSqlDao implements ArtistDao {
         repository.save(artist);
     }
 
+    @Override
+    public Optional<Artist> getArtistById(Long artistId) {
+        return repository.findById(artistId);
+    }
+
+    @Override
+    public Optional<Artist> getArtistByName(String name) {
+        return repository.findArtistByName(name);
+    }
+
 }

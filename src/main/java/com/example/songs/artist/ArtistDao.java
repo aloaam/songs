@@ -9,5 +9,7 @@ public interface ArtistDao {
 
     void insertArtist(Artist artist);
 
+    Optional<Artist> getArtistById(Long artistId);
 
+    Optional<Artist> getArtistByName(String name);
 }

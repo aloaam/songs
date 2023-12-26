@@ -10,6 +10,9 @@ import lombok.ToString;
 @Table(name = "artist")
 public class Artist {
 
+
+    //TODO - Alo: name should be unique
+
     @Id
     @SequenceGenerator(name = "artist_sequence", sequenceName = "artist_sequence", allocationSize = 1)
     @GeneratedValue(generator = "artist_sequence", strategy = GenerationType.SEQUENCE)
