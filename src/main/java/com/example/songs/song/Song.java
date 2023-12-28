@@ -23,7 +23,7 @@ public class Song {
     @Column(name = "song_name")
     private String songName;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "artist_id", foreignKey = @ForeignKey(name = "artist_fk"))
     private Artist artist;
 
