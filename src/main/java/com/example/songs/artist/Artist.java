@@ -1,8 +1,12 @@
 package com.example.songs.artist;
 
+import com.example.songs.song.Song;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.ToString;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @ToString
 @Getter
@@ -19,10 +23,23 @@ public class Artist {
     @Column(nullable = false, unique = true)
     private String name;
 
+    @OneToMany(
+            mappedBy = "artist",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<Song> songs = new ArrayList<>();
+
+
     public Artist() {
     }
 
     public Artist(String name) {
         this.name = name;
     }
+
+    public void setSongs(List<Song> songs) {
+        this.songs = songs;
+    }
+
 }
