@@ -11,14 +11,12 @@ import lombok.ToString;
 public class Artist {
 
 
-    //TODO - Alo: name should be unique
-
     @Id
     @SequenceGenerator(name = "artist_sequence", sequenceName = "artist_sequence", allocationSize = 1)
     @GeneratedValue(generator = "artist_sequence", strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String name;
 
     public Artist() {

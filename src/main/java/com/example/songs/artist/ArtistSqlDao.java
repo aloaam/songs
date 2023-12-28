@@ -33,4 +33,9 @@ public class ArtistSqlDao implements ArtistDao {
         return repository.findArtistByName(name);
     }
 
+    @Override
+    public void deleteArtistById(Long id) {
+        repository.deleteById(id);
+    }
+
 }

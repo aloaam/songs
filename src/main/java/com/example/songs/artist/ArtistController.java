@@ -39,4 +39,9 @@ public class ArtistController {
         service.insertArtist(new Artist(artist.artistName()));
     }
 
+    @DeleteMapping("{id}")
+    public void deleteArtistById(@PathVariable Long id) {
+        service.deleteArtistById(id);
+    }
+
 }

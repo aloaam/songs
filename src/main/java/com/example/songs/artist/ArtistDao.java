@@ -12,4 +12,6 @@ public interface ArtistDao {
     Optional<Artist> getArtistById(Long artistId);
 
     Optional<Artist> getArtistByName(String name);
+
+    void deleteArtistById(Long id);
 }
