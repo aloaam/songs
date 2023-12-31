@@ -1,5 +1,6 @@
 package com.example.songs.artist;
 
+import com.example.songs.exceptions.NoContentRuntimeException;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -36,6 +37,19 @@ public class ArtistSqlDao implements ArtistDao {
     @Override
     public void deleteArtistById(Long id) {
         repository.deleteById(id);
+    }
+
+    @Override
+    public void updateArtist(ArtistDto artistDto) {
+        Optional<Artist> artist = repository.findById(artistDto.id());
+
+        if (artist.isEmpty())
+            throw new NoContentRuntimeException(
+                    String.format("The artists with id: is not found in the db: %s", artistDto.id())
+            );
+
+        repository.updateArtist(artistDto.id(), artistDto.artistName());
+
     }
 
 }

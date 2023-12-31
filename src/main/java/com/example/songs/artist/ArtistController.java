@@ -39,6 +39,12 @@ public class ArtistController {
         service.insertArtist(new Artist(artist.artistName()));
     }
 
+    @PutMapping("{id}")
+    public void updateArtist(@PathVariable Long id, @RequestBody ArtistDto artistDto) {
+        System.out.println(id);
+        service.updateArtist(artistDto);
+    }
+
     @DeleteMapping("{id}")
     public void deleteArtistById(@PathVariable Long id) {
         service.deleteArtistById(id);

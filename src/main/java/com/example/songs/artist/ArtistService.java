@@ -42,4 +42,8 @@ public class ArtistService {
         Optional<Artist> artist = storage.getArtistById(id);
         return artist.isPresent();
     }
+
+    public void updateArtist(ArtistDto artistDto) {
+        storage.updateArtist(artistDto);
+    }
 }
