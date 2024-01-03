@@ -15,6 +15,6 @@ public interface ArtistRepository extends JpaRepository<Artist, Long> {
 
     @Modifying
     @Transactional
-    @Query("update Artist a SET a.name = :name WHERE a.id = :id")
+    @Query("UPDATE Artist a SET a.name = :name WHERE a.id = :id")
     void updateArtist(@Param("id") Long id, @Param("name") String name);
 }

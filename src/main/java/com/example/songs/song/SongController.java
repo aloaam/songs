@@ -38,8 +38,13 @@ public class SongController {
     }
 
     @PostMapping
-    public void insertSong(@RequestBody SongRegistration registration) {
-        service.registerSong(registration);
+    public void insertSong(@RequestBody SongRegistration songRegistration) {
+        service.registerSong(songRegistration);
+    }
+
+    @PutMapping("{songId}")
+    public void updateSong(@PathVariable Long songId, @RequestBody SongRegistration songRegistration) {
+        service.updateSong(songId, songRegistration);
     }
 
     @DeleteMapping("{id}")

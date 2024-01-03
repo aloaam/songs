@@ -11,4 +11,7 @@ public interface SongDao {
     void deleteSong(Long id);
 
     void addSong(SongRegistration song);
+
+    void updateSong(Long songId, SongRegistration songRegistration);
+
 }

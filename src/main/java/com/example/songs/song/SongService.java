@@ -26,4 +26,8 @@ public class SongService {
     public void deleteSong(Long id) {
         storage.deleteSong(id);
     }
+
+    public void updateSong(Long songId, SongRegistration songRegistration) {
+        storage.updateSong(songId, songRegistration);
+    }
 }

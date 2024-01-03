@@ -30,6 +30,17 @@ public class SongSqlDao implements SongDao {
     }
 
     @Override
+    public void updateSong(Long songId, SongRegistration songRegistration) {
+        repository.updateSong(
+                songId,
+                songRegistration.bpm(),
+                songRegistration.lyrics(),
+                songRegistration.musicKey(),
+                songRegistration.artist()
+        );
+    }
+
+    @Override
     public void deleteSong(Long id) {
         repository.deleteById(id);
     }
