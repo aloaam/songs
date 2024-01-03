@@ -41,7 +41,6 @@ public class ArtistController {
 
     @PutMapping("{id}")
     public void updateArtist(@PathVariable Long id, @RequestBody ArtistDto artistDto) {
-        System.out.println(id);
         service.updateArtist(artistDto);
     }
 

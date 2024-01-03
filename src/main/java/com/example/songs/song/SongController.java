@@ -1,9 +1,7 @@
 package com.example.songs.song;
 
 import com.example.songs.exceptions.NoContentRuntimeException;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -37,6 +35,16 @@ public class SongController {
                         )
                 )
                 .toList();
+    }
+
+    @PostMapping
+    public void insertSong(@RequestBody SongRegistration registration) {
+        service.registerSong(registration);
+    }
+
+    @DeleteMapping("{id}")
+    public void deleteSong(@PathVariable Long id) {
+        service.deleteSong(id);
     }
 
 }

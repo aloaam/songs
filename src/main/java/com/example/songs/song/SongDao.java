@@ -8,4 +8,7 @@ public interface SongDao {
     Optional<List<Song>> getAllSongs();
 
 
+    void deleteSong(Long id);
+
+    void addSong(SongRegistration song);
 }

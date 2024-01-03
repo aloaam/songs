@@ -18,4 +18,20 @@ public class SongSqlDao implements SongDao {
         return Optional.of(repository.findAll());
     }
 
+    @Override
+    public void addSong(SongRegistration songRegistration) {
+        Song song = new Song(
+                songRegistration.musicKey(),
+                songRegistration.songName(),
+                songRegistration.artist(),
+                songRegistration.bpm()
+        );
+        repository.save(song);
+    }
+
+    @Override
+    public void deleteSong(Long id) {
+        repository.deleteById(id);
+    }
+
 }

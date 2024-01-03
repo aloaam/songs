@@ -1,6 +1,7 @@
 package com.example.songs.artist;
 
 import com.example.songs.song.Song;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.ToString;
@@ -28,6 +29,7 @@ public class Artist {
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
+    @JsonIgnore
     private List<Song> songs = new ArrayList<>();
 
 

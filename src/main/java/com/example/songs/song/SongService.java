@@ -19,4 +19,11 @@ public class SongService {
         return storage.getAllSongs();
     }
 
+    public void registerSong(SongRegistration song) {
+        storage.addSong(song);
+    }
+
+    public void deleteSong(Long id) {
+        storage.deleteSong(id);
+    }
 }
