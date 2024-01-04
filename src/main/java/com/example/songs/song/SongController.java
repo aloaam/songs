@@ -38,6 +38,26 @@ public class SongController {
                 .toList();
     }
 
+    @GetMapping("{songId}")
+    public SongDto getById(@PathVariable Long songId) {
+
+        Optional<Song> song = service.getSongById(songId);
+
+        if (song.isEmpty()) {
+            throw new NoContentRuntimeException("No data found in the DB");
+        }
+
+        return new SongDto(
+                song.get().getId(),
+                song.get().getSongName(),
+                song.get().getBpm(),
+                song.get().getMusicKey(),
+                song.get().getArtist(),
+                song.get().getLyrics()
+        );
+
+    }
+
     @PostMapping
     public void insertSong(@RequestBody SongRegistration songRegistration) {
         service.registerSong(songRegistration);
@@ -48,14 +68,14 @@ public class SongController {
         service.updateSong(songId, songRegistration);
     }
 
-    @DeleteMapping("{id}")
-    public void deleteSong(@PathVariable Long id) {
-        service.deleteSong(id);
-    }
-
     @PutMapping("/lyrics/{songId}")
     public void updateLyrics(@PathVariable Long songId, @RequestBody LyricsUpdateRegistration lyricsRegistration) {
         service.updateLyrics(songId, lyricsRegistration);
+    }
+
+    @DeleteMapping("{id}")
+    public void deleteSong(@PathVariable Long id) {
+        service.deleteSong(id);
     }
 
 }

@@ -46,6 +46,11 @@ public class SongSqlDao implements SongDao {
     }
 
     @Override
+    public Optional<Song> getSongById(Long songId) {
+        return repository.findById(songId);
+    }
+
+    @Override
     public void deleteSong(Long id) {
         repository.deleteById(id);
     }

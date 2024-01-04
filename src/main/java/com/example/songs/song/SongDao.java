@@ -15,4 +15,6 @@ public interface SongDao {
     void updateSong(Long songId, SongRegistration songRegistration);
 
     void updateLyrics(Long songId, LyricsUpdateRegistration lyrics);
+
+    Optional<Song> getSongById(Long songId);
 }

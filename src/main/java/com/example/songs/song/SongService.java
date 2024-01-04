@@ -34,4 +34,8 @@ public class SongService {
     public void updateLyrics(Long songId, LyricsUpdateRegistration lyricsRegistration) {
         storage.updateLyrics(songId, lyricsRegistration);
     }
+
+    public Optional<Song> getSongById(Long songId) {
+        return storage.getSongById(songId);
+    }
 }
