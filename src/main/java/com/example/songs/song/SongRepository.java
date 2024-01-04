@@ -31,4 +31,8 @@ public interface SongRepository extends JpaRepository<Song, Long> {
                     @Param("artist") Artist artist);
 
 
+    @Modifying
+    @Transactional
+    @Query("UPDATE Song s SET s.lyrics = :lyrics WHERE s.id = :songId")
+    void updateLyrics(@Param("songId") Long songId, @Param("lyrics") String lyrics);
 }

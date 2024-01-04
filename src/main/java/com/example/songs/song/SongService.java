@@ -30,4 +30,8 @@ public class SongService {
     public void updateSong(Long songId, SongRegistration songRegistration) {
         storage.updateSong(songId, songRegistration);
     }
+
+    public void updateLyrics(Long songId, LyricsUpdateRegistration lyricsRegistration) {
+        storage.updateLyrics(songId, lyricsRegistration);
+    }
 }

@@ -53,4 +53,9 @@ public class SongController {
         service.deleteSong(id);
     }
 
+    @PutMapping("/lyrics/{songId}")
+    public void updateLyrics(@PathVariable Long songId, @RequestBody LyricsUpdateRegistration lyricsRegistration) {
+        service.updateLyrics(songId, lyricsRegistration);
+    }
+
 }
