@@ -7,6 +7,7 @@ public record SongDto(
         String songName,
         Integer bpm,
         MusicKey musicKey,
-        Artist artist
+        Artist artist,
+        String lyrics
 ) {
 }

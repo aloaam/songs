@@ -30,7 +30,7 @@ public class Song {
     @Column(name = "bpm")
     private Integer bpm;
 
-    @Column(name = "lyrics")
+    @Column(name = "lyrics", columnDefinition = "TEXT")
     private String lyrics;
 
     public Song(MusicKey musicKey, String songName, Artist artist, Integer bpm) {

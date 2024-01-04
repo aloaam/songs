@@ -31,7 +31,8 @@ public class SongController {
                                 song.getSongName(),
                                 song.getBpm(),
                                 song.getMusicKey(),
-                                song.getArtist()
+                                song.getArtist(),
+                                song.getLyrics()
                         )
                 )
                 .toList();
