@@ -11,6 +11,9 @@ import lombok.ToString;
 @Table(name = "song")
 public class Song {
 
+    //TODO - Alo: check the update on the lyrics.
+
+
     @Id
     @SequenceGenerator(name = "song_sequence", sequenceName = "song_sequence", allocationSize = 1)
     @GeneratedValue(generator = "song_sequence", strategy = GenerationType.SEQUENCE)
